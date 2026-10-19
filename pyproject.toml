@@ -20,7 +20,7 @@ dependencies = [
   "python-multipart==0.0.32",
   "sentry-sdk[fastapi]==2.65.0",
   "supabase==2.31.0",
-  "uvicorn==0.51.0",
+  "uvicorn==0.54.0",
 ]
 
 [tool.pytest.ini_options]
