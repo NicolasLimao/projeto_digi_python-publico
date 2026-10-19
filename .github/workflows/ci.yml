@@ -1,0 +1,39 @@
+name: quality
+
+on:
+  push:
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade "pip>=26.2,<27"
+          python -m pip install -r requirements-dev.lock
+          # O type-check cobre dashboard/, entao as deps dele precisam estar
+          # instaladas: sem streamlit o mypy perde o NoReturn de st.stop() e
+          # acusa erro em codigo que passa localmente.
+          python -m pip install -r dashboard/requirements.txt
+      - name: Lint and format
+        run: |
+          ruff check .
+          ruff format --check .
+      - name: Type-check
+        run: mypy src main.py evals dashboard
+      - name: Test
+        run: pytest -q
+      - name: Static security scan
+        run: bandit -q -r src main.py -c pyproject.toml
+      - name: Dependency audit
+        run: pip-audit -r requirements.lock --progress-spinner off

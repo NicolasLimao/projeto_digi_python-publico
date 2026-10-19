@@ -1,0 +1,12 @@
+[theme]
+base = "dark"
+primaryColor = "#5c8ff0"
+backgroundColor = "#1a1a19"
+secondaryBackgroundColor = "#24262a"
+textColor = "#e8e8e6"
+
+[browser]
+gatherUsageStats = false
+
+[server]
+address = "127.0.0.1"

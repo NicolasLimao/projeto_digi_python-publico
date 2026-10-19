@@ -1,0 +1,6 @@
+# Deps exclusivas do dashboard (Streamlit) — as demais (httpx, supabase, openai,
+# python-dotenv) vêm do requirements.lock da API. Pinadas nas versões em uso.
+streamlit==1.59.2
+altair==6.2.2
+pandas==3.0.3
+pymupdf==1.28.0

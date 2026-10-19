@@ -1,0 +1,85 @@
+# Ambiente / segredos
+.env
+.env.*
+!.env.example
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.egg-info/
+.venv/
+.venv2/
+venv/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+
+# Node
+node_modules/
+npm-debug.log*
+
+# Logs
+*.log
+
+# Backups locais (chunks, dumps, etc.)
+backups/
+
+# Relatorios de eval/detector: artefatos regeneraveis; os do detector carregam
+# trechos crus da base (referencias internas). Nao versionar num repo publico.
+evals/reports/
+# Local dashboard exports may contain conversation excerpts and internal identifiers.
+docs/relatorio-digi-*.md
+
+# Ferramentas de IA / metadados de assistente
+.claude/
+docs/superpowers/
+
+# Material interno / de desenvolvimento (não vai pro repo público)
+contexto/
+STATUS_DESENVOLVIMENTO.md
+BOT_UPDATE_INSTRUCTIONS.md
+DISCORD_BOT_SETUP.md
+
+# Código antigo / abandonado
+discord/
+bot-updated.js
+
+# Scripts locais de execução (README documenta o `python main.py`)
+run.bat
+run.ps1
+
+# OS / IDE
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# Edição pública: dados de execução e materiais privados ficam locais.
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.p12
+*.pfx
+*.db
+*.sqlite
+*.sqlite3
+*.sqlite-*
+*.sqlite3-*
+*.log
+private-data/
+local-data/
+uploads/
+exports/
+backups/
+.claude/
+.codex/
+.agents/
+.impeccable/
+
+# Bases de avaliação privadas
+evals/private/
