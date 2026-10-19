@@ -19,7 +19,7 @@ dependencies = [
   "python-dotenv==1.2.2",
   "python-multipart==0.0.32",
   "sentry-sdk[fastapi]==2.65.0",
-  "supabase==2.31.0",
+  "supabase==2.33.0",
   "uvicorn==0.51.0",
 ]
 
